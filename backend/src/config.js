@@ -7,19 +7,25 @@ const { NETWORK } = require(`${basePath}/constants/network.js`);
 const network = NETWORK.eth;
 
 // General metadata for Ethereum
-const namePrefix = "Nothing But FLex";
-const description = "We live in a culture that promotes the ability to flex. Designer bags, limited edition sneakers, fancy watche and bling- NFTs are paving a new avenue to flaunt all that $$. What better way to do just that than to own an NFT that offers Nothing…. But Flex.";
+const namePrefix = "Blue Skies Always";
+const description = "The FIRST🍺 ever NFT Project for Skydiving!! Creating awareness that Skydiving can go beyond the one-and-done tandem jump.";
 const baseUri = "ipfs://NewUriToReplace"; // This will be replaced automatically
 
 // If you have selected Solana then the collection starts from 0 automatically
 const layerConfigurations = [
   {
-    growEditionSizeTo: 500,
+    growEditionSizeTo: 10000,
     layersOrder: [
-      { name: "bg" },
-      { name: "n" },
-      { name: "b" },
-      { name: "f" },
+      { name: "Background" },
+      { name: "Container" },
+      { name: "Canopy" },
+      { name: "Slider" },
+      { name: "Suit" },
+      { name: "Helmet" },
+      { name: "Toggle" },
+      { name: "Harness" },
+      { name: "Shoes" },
+      { name: "Altimeter" },
     ],
   },
 ];
@@ -35,45 +41,45 @@ const format = {
 };
 
 const extraMetadata = {
-  external_url: "https://sites.google.com/view/cryptoelmo22", // Replace with your website or remove this line if you do not have one.
+  external_url: "https://bit.ly/cryptoelmo22", // Replace with your website or remove this line if you do not have one.
 };
 
 // NFTPort Info
 
 // ** REQUIRED **
 const AUTH = process.env.NFTPORT_API_KEY; // Set this in the .env file to prevent exposing your API key when pushing to Github
-const LIMIT = 2; // Your API key rate limit
-const CHAIN = 'polygon'; // only rinkeby or polygon
+const LIMIT = 10; // Your API key rate limit
+const CHAIN = 'rinkeby'; // only rinkeby or polygon
 
 // REQUIRED CONTRACT DETAILS THAT CANNOT BE UPDATED LATER!
-const CONTRACT_NAME = 'Nothing But Flex';
-const CONTRACT_SYMBOL = 'NBF';
+const CONTRACT_NAME = 'Blue Skies Always';
+const CONTRACT_SYMBOL = 'BSA';
 const METADATA_UPDATABLE = true; // set to false if you don't want to allow metadata updates after minting
 const OWNER_ADDRESS = '0xe153aBff6bbfBBC24aD07F9A4714Dc963Df87842';
 const TREASURY_ADDRESS = '0xe153aBff6bbfBBC24aD07F9A4714Dc963Df87842';
-const MAX_SUPPLY = 500; // The maximum number of NFTs that can be minted. CANNOT BE UPDATED!
-const MINT_PRICE = 1000; // Minting price per NFT. Rinkeby = ETH, Polygon = MATIC. CANNOT BE UPDATED!
-const TOKENS_PER_MINT = 5; // maximum number of NFTs a user can mint in a single transaction. CANNOT BE UPDATED!
+const MAX_SUPPLY = 10000; // The maximum number of NFTs that can be minted. CANNOT BE UPDATED!
+const MINT_PRICE = 0.0001; // Minting price per NFT. Rinkeby = ETH, Polygon = MATIC. CANNOT BE UPDATED!
+const TOKENS_PER_MINT = 10; // maximum number of NFTs a user can mint in a single transaction. CANNOT BE UPDATED!
 
 // REQUIRED CONTRACT DETAILS THAT CAN BE UPDATED LATER.
-const PUBLIC_MINT_START_DATE = "2022-05-30T23:30:00+08:00"; // This is required. Eg: 2022-02-08T11:30:48+00:00
+const PUBLIC_MINT_START_DATE = "2022-05-28T08:30:00+08:00"; // This is required. Eg: 2022-02-08T11:30:48+00:00
 
 // OPTIONAL CONTRACT DETAILS THAT CAN BE UPDATED LATER.
-const PRESALE_MINT_START_DATE = "2022-05-19T23:30:00+08:00"; // Optional. Eg: 2022-02-08T11:30:48+00:00
-const ROYALTY_SHARE = 2000; // Percentage of the token price that goes to the royalty address. 100 bps = 1%
+const PRESALE_MINT_START_DATE = null; // Optional. Eg: 2022-02-08T11:30:48+00:00
+const ROYALTY_SHARE = 1000; // Percentage of the token price that goes to the royalty address. 100 bps = 1%
 const ROYALTY_ADDRESS = "0xe153aBff6bbfBBC24aD07F9A4714Dc963Df87842"; // Address that will receive the royalty
 const BASE_URI = null; // only update if you want to manually set the base uri
 const PREREVEAL_TOKEN_URI = null; // only update if you want to manually set the prereveal token uri
 const PRESALE_WHITELISTED_ADDRESSES = []; // only update if you want to manually set the whitelisted addresses
 
 // ** OPTIONAL, nope needed**
-let CONTRACT_ADDRESS = "0x837Ff71F2B3743B27E1f1278EfA9b8635e00Db06"; // If you want to manually include it
+let CONTRACT_ADDRESS = "0x3DAC2127e229e00cE10196bE4C8D1F8e18469Aee"; // If you want to manually include it
 
 // Generic Metadata is optional if you want to reveal your NFTs
-const GENERIC = false; // Set to true if you want to upload generic metas and reveal the real NFTs in the future
+const GENERIC = true; // Set to true if you want to upload generic metas and reveal the real NFTs in the future
 const GENERIC_TITLE = CONTRACT_NAME; // Replace with what you want the generic titles to say if you want it to be different from the contract name.
-const GENERIC_DESCRIPTION = "Does it Matter?"; // Replace with what you want the generic descriptions to say.
-const GENERIC_IMAGE = ""; // Replace with your generic image that will display for all NFTs pre-reveal.
+const GENERIC_DESCRIPTION = "Swooping in to a Dropzone near you!"; // Replace with what you want the generic descriptions to say.
+const GENERIC_IMAGE = "https://ipfs.io/ipfs/bafybeiears42lcfaurvpe4iqs773xqwq5plwsmpbn6ueg4gr7fotr63nii"; // Replace with your generic image that will display for all NFTs pre-reveal.
 
 // Automatically set contract address if deployed using the deployContract.js script
 try {
@@ -90,7 +96,7 @@ try {
 // END NFTPort Info
 
 const solanaMetadata = {
-  symbol: "NBF",
+  symbol: "BSA",
   seller_fee_basis_points: 1000, // Define how much % you want from secondary market sales 1000 = 10%
   external_url: "",
   creators: [
